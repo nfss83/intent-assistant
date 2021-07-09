@@ -66,6 +66,8 @@ responses:
     - payload: /inform{"type":"mMTC"}
       title: mMTC
     text: Which type of service do you want to request?
+  utter_welcome:
+  - text: You're welcome!
 actions:
 - '...'
 - utter_greet
