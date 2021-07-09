@@ -37,9 +37,9 @@ nlu:
 - intent: inform
   examples: |
     - My email is example@example.com
-    - random@example.com
-    - Please send it to anything@example.com
-    - Email is something@example.com
+    - mMTC
+    - URLLC
+    - eMBB
 - intent: farewell
   examples: |
     - bye
@@ -64,7 +64,6 @@ nlu:
     - catch you later
     - cya
     - farewell
-    - good night
     - good night
     - gotta go
     - ok Bye
@@ -93,7 +92,6 @@ nlu:
     - amazing, thanks
     - cool thank you
     - cool, thanks
-    - great thanks
     - ok thanks
     - ok thanks!
     - perfect thank you
@@ -145,7 +143,6 @@ nlu:
     - can you please help me
     - How can you help me
     - How you help me?
-    - I need some help
     - What are my options
     - What are you able to do?
     - What can I ask you?
@@ -162,7 +159,6 @@ nlu:
     - cool! can I do something else here?
     - hello what can you do for me
     - help
-    - help me
     - help please
     - help pls
     - help?

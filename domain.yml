@@ -11,10 +11,31 @@ intents:
     use_entities: true
 - subscribe:
     use_entities: true
+- bot_challenge:
+    use_entities: true
+- request:
+    use_entities: true
+- help:
+    use_entities: true
+- affirm:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- thank:
+    use_entities: true
+- farewell:
+    use_entities: true
+- deny:
+    use_entities: true
 entities: []
 slots:
   email:
     type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  type_service:
+    type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
@@ -30,6 +51,21 @@ responses:
       Check your inbox at {email} in order to finish subscribing to the newsletter!
   - text: |
       You're all set! Check your inbox at {email} to confirm your subscription.
+  utter_out_of_scope:
+  - text: Sorry, I do not enable to attend to you about that. Try to request a network service, for instance.
+  utter_goodbye:
+  - text: Goodbye! A pleasure to talk to you.
+  utter_iamabot:
+  - text: I am a bot ;-)
+  utter_ask_type_service:
+  - buttons:
+    - payload: /inform{"type":"eMBB"}
+      title: eMBB
+    - payload: /inform{"type":"URLLC"}
+      title: URLLC
+    - payload: /inform{"type":"mMTC"}
+      title: mMTC
+    text: Which type of service do you want to request?
 actions:
 - '...'
 - utter_greet
