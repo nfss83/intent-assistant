@@ -1,11 +1,9 @@
 version: "2.0"
 stories:
- - story: greet and subscribe
-   steps:
-   - intent: greet
-   - action: utter_greet
-   - intent: response_yes
-   - action: utter_ask_service
-   - intent: type_service
-   - action: service_form
-   - active_loop: service_form
+- story: greet and subscribe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: subscribe
+  - action: newsletter_form
+  - active_loop: newsletter_form

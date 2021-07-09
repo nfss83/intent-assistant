@@ -1,52 +1,42 @@
-version: "2.0"
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
-  session_expiration_time: 0.0
+  session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- response_yes
-- type_service
-- subscribe
-- inform
-entities:
-- email
+- greet:
+    use_entities: true
+- inform:
+    use_entities: true
+- subscribe:
+    use_entities: true
+entities: []
 slots:
   email:
-    type: text
-    influence_conversation: false
-  service:
-    type: text
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
 responses:
   utter_greet:
-      - text: |
-          Hello! Do you want to request a service?
-      - text: |
-          Hi! Do you want to request a service?
-  utter_ask_service:
-      - text: |
-          Which type of service? evolved Mobile BroadBand (eMBB), Ultra Reliable Low Latency Communication (URLLC), or massive Machine Type Communication (mMTC)
-  utter_request:
-      - text: |
-          Your service {service} was requested. Wait for its status.         
+  - text: Hello! How can I help you?
+  - text: Hi!
   utter_ask_email:
-      - text: |
-          What is your email address?
+  - text: |
+      What is your email address?
   utter_subscribed:
-      - text: |
-          Check your inbox at {email} in order to finish subscribing to the newsletter!
-      - text: |
-          You're all set! Check your inbox at {email} to confirm your subscription.
+  - text: |
+      Check your inbox at {email} in order to finish subscribing to the newsletter!
+  - text: |
+      You're all set! Check your inbox at {email} to confirm your subscription.
+actions:
+- '...'
+- utter_greet
+- utter_subscribed
 forms:
   newsletter_form:
     required_slots:
       email:
       - type: from_text
-  service_form:
-    required_slots:
-      service:
-      - type: from_text 
-actions:
-- utter_greet
-- utter_ask_service
-- utter_request
+e2e_actions: []
