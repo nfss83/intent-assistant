@@ -242,7 +242,7 @@ nlu:
 - intent: request
   examples: |
     - I want to request a [service](type_service)
-    - Request a service
+    - Request a [service](type_service)
     - How can I help you?
     - I need to request a network [service](type_service)
     - Can you request a service for me
