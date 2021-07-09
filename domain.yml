@@ -21,7 +21,7 @@ slots:
 responses:
   utter_greet:
   - text: Hello! How can I help you?
-  - text: Hi!
+  - text: Hi! I'm your Service Request  Assistant.
   utter_ask_email:
   - text: |
       What is your email address?
