@@ -43,7 +43,206 @@ nlu:
 - intent: farewell
   examples: |
     - bye
+    - goodbye
+    - see you around
+    - see you later
+    - see ya
+    - buh bye
     - Bye
+    - Bye bye
+    - adios
+    - adios?
+    - bye :P
+    - bye bot
+    - bye bye
+    - bye bye bot
+    - bye for now
+    - bye udo
+    - bye was nice talking to you
+    - bye!
+    - byee
+    - catch you later
+    - cya
+    - farewell
+    - good night
+    - good night
+    - gotta go
+    - ok Bye
+    - ok bye
+    - ok, bye
+    - ok.bye
+    - see u later
+    - see you
+    - take care
+    - then bye
+- intent: thank
+  examples: |
+    - thanks!
+    - thank you
+    - thanks a lot
+    - great thanks
+    - appreciate it
+    - cool thanks
+    - Cool. Thanks
+    - Great, thanks
+    - Thank you so much
+    - Thank's!
+    - Thanks bot
+    - Thanks for that
+    - Thanks!
+    - amazing, thanks
+    - cool thank you
+    - cool, thanks
+    - great thanks
+    - ok thanks
+    - ok thanks!
+    - perfect thank you
+    - thank u
+    - thank you anyways
+    - thanks
+    - thanks for the help
+    - thankyou
+    - thx
+    - yes thanks
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - you are a bot right
+    - aren't you a bot
+    - Are you a bot?
+    - are you a BOT
+    - are you a chatbot
+    - are you a real bot?
+    - are you a robot
+    - are you ai
+    - are you artificial
+    - are you artificial intelligence
+    - are you bot
+    - are you bot?
+    - are you real
+    - are you really a bot
+    - are you robot
+    - are you sure that you're a bot?
+    - bot?
+    - oh are you chatbot?
+    - tell me, are you a bot?
+    - what are you, a bot?
+    - you are a robot
+    - you are ai
+    - you are chatbot
+    - you're a bot
+- intent: help
+  examples: |
+    - I need help
+    - what can you help me with
+    - can you help me
+    - what can you do
+    - I need some help
+    - help me
+    - can you please help me
+    - How can you help me
+    - How you help me?
+    - I need some help
+    - What are my options
+    - What are you able to do?
+    - What can I ask you?
+    - What can I do?
+    - What can you do for me?
+    - What can you do?
+    - What can you tell me?
+    - What do you do
+    - anything else
+    - are there any other options?
+    - can I ask you anything else?
+    - can you do anything else?
+    - can you help me?
+    - cool! can I do something else here?
+    - hello what can you do for me
+    - help
+    - help me
+    - help please
+    - help pls
+    - help?
+- intent: out_of_scope
+  examples: |
+    - what is the square root of 5
+    - I want to know the weather
+    - what is the meaning of life.
+    - Fridge Isn't Running
+    - my tv isn't working
+    - I want a pizza
+    - my washing machine isn't working
+    - what year is it
+    - order a pizza
+    - I want to order a pizza
+    - what is the weather today
+    - what is the weather
+    - how old are you?
+    - add two plus two
+    - Hdjejene
+    - asd
+    - title
+    - how about the forecast
+    - foolish
+    - joke
+    - Can I get a hamburger?
+    - Can YouTube talk?
+    - Can you call me back ?
+    - Can you give me your datacenter's password
+    - Can you give me your datacenter's password?
+    - Can you make sandwiches?
+    - Can you please send me an uber
+    - Open a ticket
+- intent: affirm
+  examples: |
+    - yes
+    - yes please
+    - yes I would
+    - please do
+    - yup
+    - yep
+    - that's right
+    - indeed
+    - Yes, please
+    - yeah
+    - sure
+    - yes thanks
+    - That would be great
+    - YES
+    - YUP
+    - Yeah
+    - Yeah sure
+    - Yep
+    - Yep that's fine
+    - Yep!
+    - Yes
+    - Yes I do
+    - Yes please
+    - Yes please!
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - no thanks
+    - not that one
+    - don't use that
+    - please no
+    - no don't do that
+    - Neither
+    - Never
+    - Nevermind
+    - No thank you
+    - No, not really.
+    - No, thank you
+    - No.
+    - Not really
+    - absolutely not
+    - decline
+    - definitely not
+    - deny
 - intent: request
   examples: |
     - I want to request a service
