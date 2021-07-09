@@ -241,7 +241,7 @@ nlu:
     - deny
 - intent: request
   examples: |
-    - I want to request a service
+    - I want to request a [service](type_service)
     - Request a service
     - How can I help you?
     - I need to request a network service
@@ -255,4 +255,4 @@ nlu:
     - I'm having a needs I need to request a network slice.
     - i wanna request a network slice
     - can I request a service
-    - please request a service
+    - please request a [service](type_service)
