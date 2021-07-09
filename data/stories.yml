@@ -1,0 +1,10 @@
+stories:
+ - story: greet and subscribe
+   steps:
+   - intent: greet
+   - action: utter_greet
+   - intent: response_yes
+   - action: utter_ask_service
+   - intent: type_service
+   - action: service_form
+   - active_loop: service_form
