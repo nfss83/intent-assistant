@@ -2,11 +2,33 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+    - hello there
+    - greetings
     - Hi
-    - Hey!
-    - Hello
-    - Good day
-    - Good morning
+    - helo
+    - Hi!
+    - Hi'
+    - Hi,
+    - Hi, bot
+    - Hieee
+    - Hieeeeeeeeeeeee
+    - Hola
+    - What is up?
+    - Whats up
+    - Whats up my bot
+    - Whats up?
+    - ayyyy whaddup
+    - bonjour
+    - ey boss
+    - I said, helllllloooooO!!!!
+    - Well hello there ;)
 - intent: response_yes
     - yes
     - no
