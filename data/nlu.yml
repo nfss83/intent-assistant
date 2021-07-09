@@ -244,7 +244,7 @@ nlu:
     - I want to request a [service](type_service)
     - Request a service
     - How can I help you?
-    - I need to request a network service
+    - I need to request a network [service](type_service)
     - Can you request a service for me
     - I have an order I need to ask a service for
     - request service
