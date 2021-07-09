@@ -27,7 +27,8 @@ intents:
     use_entities: true
 - deny:
     use_entities: true
-entities: []
+entities:
+- type_service
 slots:
   email:
     type: rasa.shared.core.slots.UnfeaturizedSlot
@@ -59,11 +60,11 @@ responses:
   - text: I am a bot ;-)
   utter_ask_type_service:
   - buttons:
-    - payload: /inform{"type":"eMBB"}
+    - payload: /inform{"type_service":"eMBB"}
       title: eMBB
-    - payload: /inform{"type":"URLLC"}
+    - payload: /inform{"type_service":"URLLC"}
       title: URLLC
-    - payload: /inform{"type":"mMTC"}
+    - payload: /inform{"type_service":"mMTC"}
       title: mMTC
     text: Which type of service do you want to request?
   utter_welcome:
