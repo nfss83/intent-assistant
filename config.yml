@@ -1,0 +1,11 @@
+language: en
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+policies:
+  - name: AugmentedMemoizationPolicy
+    max_history: 4
+  - name: TEDPolicy
+    max_history: 4
+    epochs: 100
+  - name: RulePolicy
