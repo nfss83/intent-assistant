@@ -29,17 +29,6 @@ nlu:
     - I said, helllllloooooO!!!!
     - Well hello there ;)
     - Hello
-- intent: subscribe
-  examples: |
-    - I want to get the newsletter
-    - Can you send me the newsletter?
-    - Can you sign me up for the newsletter?
-- intent: inform
-  examples: |
-    - My email is example@example.com
-    - mMTC
-    - URLLC
-    - eMBB
 - intent: farewell
   examples: |
     - bye
@@ -102,6 +91,8 @@ nlu:
     - thankyou
     - thx
     - yes thanks
+    - Thanks
+    - Thank you
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -192,6 +183,7 @@ nlu:
     - Can you make sandwiches?
     - Can you please send me an uber
     - Open a ticket
+    - I want to open a ticket
 - intent: affirm
   examples: |
     - yes
@@ -241,10 +233,10 @@ nlu:
     - deny
 - intent: request
   examples: |
-    - I want to request a [service](type_service)
-    - Request a [service](type_service)
+    - I want to request a service
+    - Request a service
     - How can I help you?
-    - I need to request a network [service](type_service)
+    - I need to request a network service
     - Can you request a service for me
     - I have an order I need to ask a service for
     - request service
@@ -255,4 +247,17 @@ nlu:
     - I'm having a needs I need to request a network slice.
     - i wanna request a network slice
     - can I request a service
-    - please request a [service](type_service)
+    - please request a service
+    - I want to resquest a service
+    - Network service
+    - network service
+- intent: type_service
+  examples: |
+    - [[eMBB](type_service)](type_service)
+    - [[URLLC](type_service)](type_service)
+    - [[mMTC](type_service)](type_service)
+- intent: inform
+  examples: |
+    - [eMBB](type_service)
+    - [URLLC](type_service)
+    - [mMTC](type_service)

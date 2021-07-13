@@ -1,14 +1,12 @@
 version: "2.0"
 rules:
-- rule: activate subscribe form
+- rule: activate service form
   steps:
-  - intent: subscribe
-  - action: newsletter_form
-  - active_loop: newsletter_form
-- rule: submit form
-  condition:
-  - active_loop: newsletter_form
+  - action: utter_ask_type_service
+  - action: service_form
+  - active_loop: service_form
+- rule: service form
   steps:
-  - action: newsletter_form
+  - action: service_form
   - active_loop: null
-  - action: utter_subscribed
+  - action: utter_requested_service

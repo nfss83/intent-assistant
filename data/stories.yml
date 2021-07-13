@@ -8,9 +8,33 @@ stories:
   steps:
   - intent: thank
   - action: utter_welcome
-- story: greet and request
+- story: Story greet and request
   steps:
+  - slot_was_set:
+    - requested_slot: type_service
   - intent: greet
   - action: utter_greet
   - intent: request
-  - action: utter_ask_type_service
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: mMTC
+  - slot_was_set:
+    - type_service: mMTC
+  - action: utter_requested_service
+- story: Story request
+  steps:
+  - slot_was_set:
+    - type_service: URLLC
+  - intent: request
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: mMTC
+  - slot_was_set:
+    - type_service: mMTC
+  - action: utter_requested_service
+- story: say goodbye
+  steps:
+  - intent: farewell
+  - action: utter_goodbye
