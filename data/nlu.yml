@@ -29,6 +29,8 @@ nlu:
     - I said, helllllloooooO!!!!
     - Well hello there ;)
     - Hello
+    - Hii
+    - Heloo
 - intent: farewell
   examples: |
     - bye
@@ -63,6 +65,7 @@ nlu:
     - see you
     - take care
     - then bye
+    - byeee
 - intent: thank
   examples: |
     - thanks!
@@ -93,6 +96,7 @@ nlu:
     - yes thanks
     - Thanks
     - Thank you
+    - thank
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -184,6 +188,7 @@ nlu:
     - Can you please send me an uber
     - Open a ticket
     - I want to open a ticket
+    - I want to ask ticket car
 - intent: affirm
   examples: |
     - yes
@@ -251,13 +256,24 @@ nlu:
     - I want to resquest a service
     - Network service
     - network service
-- intent: type_service
-  examples: |
-    - [[eMBB](type_service)](type_service)
-    - [[URLLC](type_service)](type_service)
-    - [[mMTC](type_service)](type_service)
+    - I want a requet a service
+    - I want to request a network service
+    - I want to request a network slice
+    - I want to request a network slicing
+    - service
 - intent: inform
   examples: |
     - [eMBB](type_service)
-    - [URLLC](type_service)
     - [mMTC](type_service)
+    - [URLLC](type_service)
+    - [90](number)
+    - [95](number)
+    - [1.20](number)
+    - [1.2](number)
+    - [60](number)
+    - [80](number)
+    - [70](number)
+    - [1.3](number)
+- regex: number
+  examples: |
+    - ^[1-9][0-9]?$|^100$

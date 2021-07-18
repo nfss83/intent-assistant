@@ -1,40 +1,24 @@
 version: "2.0"
 stories:
-- story: answer out of scope
+- story: Story greet, request, no sla
   steps:
-  - intent: out_of_scope
-  - action: utter_out_of_scope
-- story: thank
-  steps:
-  - intent: thank
-  - action: utter_welcome
-- story: Story greet and request
-  steps:
-  - slot_was_set:
-    - requested_slot: type_service
   - intent: greet
   - action: utter_greet
   - intent: request
   - action: utter_ask_service
   - intent: inform
     entities:
-    - type_service: mMTC
+    - type_service
   - slot_was_set:
-    - type_service: mMTC
-  - action: utter_requested_service
+    - type_service: null
+  - action: utter_requested_service_SLA
+  - intent: deny
+  - action: utter_no_sla
 - story: Story request
   steps:
-  - slot_was_set:
-    - type_service: URLLC
   - intent: request
   - action: utter_ask_service
   - intent: inform
     entities:
-    - type_service: mMTC
-  - slot_was_set:
-    - type_service: mMTC
-  - action: utter_requested_service
-- story: say goodbye
-  steps:
-  - intent: farewell
-  - action: utter_goodbye
+    - type_service: ''
+  - action: utter_requested_service_SLA

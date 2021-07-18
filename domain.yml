@@ -23,23 +23,28 @@ intents:
     use_entities: true
 - deny:
     use_entities: true
-- type_service:
-    use_entities: true
 - inform:
     use_entities: true
 entities:
 - type_service
+- number
 slots:
+  number:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
   type_service:
-    type: rasa.shared.core.slots.TextSlot
+    type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: false
-  requested_slot:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
+    influence_conversation: true
+    values:
+    - embb
+    - urllc
+    - mmtc
 responses:
   utter_greet:
   - text: Hello! How can I help you?
@@ -73,13 +78,22 @@ responses:
       - eMBB 
       - URLLC 
       - mMTC
+  utter_requested_service_SLA:
+  - text: Great. You requested the service {type_service}. Would you like to specify the requirements for that service (SLA)?
+  utter_no_sla:
+  - text: Don't worry. We are going to deploy your service.
+  utter_availability:
+  - text: Availability?
+  utter_device_velocity:
+  - text: Device Velocity?
+  utter_max_throughput:
+  - text: Max Throughput?
+  utter_availability_requested:
+  - text: Availability {number} requested.
+  utter_throughput_requested:
+  - text: Throughput {number} requested.
 actions:
 - '...'
 - utter_greet
-forms:
-  service_form:
-    required_slots:
-      type_service:
-      - entity: type_service
-        type: from_entity
+forms: {}
 e2e_actions: []

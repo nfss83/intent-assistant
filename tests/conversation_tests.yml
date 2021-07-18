@@ -1,0 +1,30 @@
+version: "2.0"
+stories:
+- story: Story from Conversation ID e46d732adc2b400ea6e41798b4beae3c
+  steps:
+  - intent: greet
+    user: |-
+      Hi
+  - action: utter_greet
+  - intent: request
+    user: |-
+      Network service
+  - action: utter_ask_service
+  - intent: inform
+    user: |-
+      [URLLC](type_service)
+  - slot_was_set:
+    - type_service: URLLC
+  - action: utter_requested_service_SLA
+  - intent: affirm
+    user: |-
+      yes
+  - slot_was_set:
+    - type_service: URLLC
+  - action: utter_availability
+  - intent: inform
+    user: |-
+      [91](number)
+  - slot_was_set:
+    - number: '91'
+  - action: utter_availability_requested

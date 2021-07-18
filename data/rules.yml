@@ -1,12 +1,35 @@
 version: "2.0"
 rules:
-- rule: activate service form
+- rule: Thank Rule
   steps:
-  - action: utter_ask_type_service
-  - action: service_form
-  - active_loop: service_form
-- rule: service form
+  - intent: thank
+  - action: utter_welcome
+- rule: answer out of scope
   steps:
-  - action: service_form
-  - active_loop: null
-  - action: utter_requested_service
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+- rule: say goodbye
+  steps:
+  - intent: farewell
+  - action: utter_goodbye
+- rule: type_service eMBB
+  condition:
+  - slot_was_set:
+    - type_service: eMBB
+  steps:
+  - intent: affirm
+  - action: utter_goodbye
+- rule: type_service URLLC
+  condition:
+  - slot_was_set:
+    - type_service: URLLC
+  steps:
+  - intent: affirm
+  - action: utter_welcome
+- rule: type_service mMTC
+  condition:
+  - slot_was_set:
+    - type_service: mMTC
+  steps:
+  - intent: affirm
+  - action: utter_iamabot
