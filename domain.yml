@@ -46,16 +46,46 @@ slots:
     - urllc
     - mmtc
   throughput:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
-  availability:
     type: rasa.shared.core.slots.FloatSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
     max_value: 1.0
+    min_value: 0.0
+  up_throughput:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  availability:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 100.0
+    min_value: 0.0
+  qos:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 10.0
+    min_value: 0.0
+  device_velocity:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1000.0
+    min_value: 0.0
+  ue_density:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 10000.0
     min_value: 0.0
 responses:
   utter_greet:
@@ -105,13 +135,37 @@ responses:
   utter_throughput_requested:
   - text: Throughput {number} requested.
   utter_ask_urllc_form_availability:
-  - text: Availability?
+  - text: Availability of requested service (%), e.g., 99.5, 99.99?
+  utter_collect_metrics:
+  - text: Please, inform the minimum set of attributes needed for {type_service} service.
+  utter_ask_urllc_form_throughput:
+  - text: Downlink throughput per UE (kbps)?
+  utter__ask_urllc_form_up_throughput:
+  - text: Uplink throughput per UE (kbps)?
+  utter_ask_urllc_form_qos:
+  - text: Service quality of service (QoS)?
+  utter_ask_urllc_form_device_velocity:
+  - text: Supported device velocity (m/s)?
+  utter_ask_urllc_form_ue_density:
+  - text: User equipment density (number per Km²)?
 actions:
 - utter_greet
 forms:
   urllc_form:
     required_slots:
       availability:
+      - entity: number
+        type: from_entity
+      device_velocity:
+      - entity: number
+        type: from_entity
+      qos:
+      - entity: number
+        type: from_entity
+      ue_density:
+      - entity: number
+        type: from_entity
+      up_throughput:
       - entity: number
         type: from_entity
 e2e_actions: []
