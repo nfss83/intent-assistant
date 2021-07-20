@@ -34,7 +34,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
-    max_value: 1.0
+    max_value: 1000.0
     min_value: 0.0
   type_service:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -45,6 +45,18 @@ slots:
     - embb
     - urllc
     - mmtc
+  throughput:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  availability:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
 responses:
   utter_greet:
   - text: Hello! How can I help you?
@@ -60,11 +72,11 @@ responses:
   - text: I am a bot ;-)
   utter_ask_type_service:
   - buttons:
-    - payload: /inform{"type_service":"eMBB"}
+    - payload: /inform{{"type_service":"embb"}}
       title: eMBB
-    - payload: /inform{"type_service":"URLLC"}
+    - payload: /inform{{"type_service":"urllc"}}
       title: URLLC
-    - payload: /inform{"type_service":"mMTC"}
+    - payload: /inform{{"type_service":"mmtc"}}
       title: mMTC
     text: Which type of service do you want to request?
   utter_welcome:
@@ -92,8 +104,14 @@ responses:
   - text: Availability {number} requested.
   utter_throughput_requested:
   - text: Throughput {number} requested.
+  utter_ask_urllc_form_availability:
+  - text: Availability?
 actions:
-- '...'
 - utter_greet
-forms: {}
+forms:
+  urllc_form:
+    required_slots:
+      availability:
+      - entity: number
+        type: from_entity
 e2e_actions: []

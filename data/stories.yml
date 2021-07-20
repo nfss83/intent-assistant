@@ -5,20 +5,11 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: request
-  - action: utter_ask_service
-  - intent: inform
-    entities:
-    - type_service
-  - slot_was_set:
-    - type_service: null
+  - action: utter_ask_type_service
   - action: utter_requested_service_SLA
+  - checkpoint: check_asked_question
+- story: handle user deny
+  steps:
+  - checkpoint: check_asked_question
   - intent: deny
   - action: utter_no_sla
-- story: Story request
-  steps:
-  - intent: request
-  - action: utter_ask_service
-  - intent: inform
-    entities:
-    - type_service: ''
-  - action: utter_requested_service_SLA
