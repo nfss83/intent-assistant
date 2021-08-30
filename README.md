@@ -1,2 +1,2 @@
-# intent-assistant
-AI-based assistant for requesting intent-based service
+# Intent-assistant
+AI-based assistant for requesting intent-based service.
