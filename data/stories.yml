@@ -1,15 +1,60 @@
 version: "2.0"
 stories:
-- story: Story greet, request, no sla
+- story: Story embb
   steps:
   - intent: greet
   - action: utter_greet
   - intent: request
-  - action: utter_ask_type_service
-  - action: utter_requested_service_SLA
-  - checkpoint: check_asked_question
-- story: handle user deny
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: embb
+  - slot_was_set:
+    - type_service: embb
+  - action: utter_ask_embb_scenario
+  - intent: inform
+    entities:
+    - embb_scenario
+  - slot_was_set:
+    - embb_scenario
+  - action: utter_requested_embb_service
+  
+stories:
+- story: Story urllc
   steps:
-  - checkpoint: check_asked_question
-  - intent: deny
-  - action: utter_no_sla
+  - intent: greet
+  - action: utter_greet
+  - intent: request
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: urllc
+  - slot_was_set:
+    - type_service: urllc
+  - action: utter_ask_urllc_scenario
+  - intent: inform
+    entities:
+    - urllc_scenario
+  - slot_was_set:
+    - urllc_scenario
+  - action: utter_requested_urllc_service
+
+stories:
+- story: Story other
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: other
+  - slot_was_set:
+    - type_service: other
+  - action: otherService_form
+  - active_loop: otherService_form
+  - active_loop: null
+  - action: service_form
+  - active_loop: service_form
+  - active_loop: null
+  - action: utter_summary_service 
