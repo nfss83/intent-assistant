@@ -14,12 +14,10 @@ stories:
   - action: utter_ask_embb_scenario
   - intent: inform
     entities:
-    - embb_scenario
+    - embb_scenario: ''
   - slot_was_set:
-    - embb_scenario
+    - embb_scenario: null
   - action: utter_requested_embb_service
-  
-stories:
 - story: Story urllc
   steps:
   - intent: greet
@@ -34,12 +32,10 @@ stories:
   - action: utter_ask_urllc_scenario
   - intent: inform
     entities:
-    - urllc_scenario
+    - urllc_scenario: ''
   - slot_was_set:
-    - urllc_scenario
+    - urllc_scenario: null
   - action: utter_requested_urllc_service
-
-stories:
 - story: Story other
   steps:
   - intent: greet
@@ -57,4 +53,4 @@ stories:
   - action: service_form
   - active_loop: service_form
   - active_loop: null
-  - action: utter_summary_service 
+  - action: utter_summary_service
