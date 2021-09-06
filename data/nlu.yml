@@ -31,7 +31,6 @@ nlu:
     - Hello
     - Hii
     - Heloo
-    - HI
 - intent: farewell
   examples: |
     - bye
@@ -262,14 +261,6 @@ nlu:
     - I want to request a network slice
     - I want to request a network slicing
     - service
-    - network slicing
-    - network servie
-    - SERVICE
-    - nework slicing
-    - nework service
-    - I nee to request a network service
-    - Networ service
-    - Yes, I want to request a service
 - intent: inform
   examples: |
     - [eMBB](type_service)
@@ -283,30 +274,6 @@ nlu:
     - [80](number)
     - [70](number)
     - [1.3](number)
-    - [urban](embb_scenario)
-    - [rural](embb_scenario)
-    - [indoor](embb_scenario)
-    - [crowd](embb_scenario)
-    - [dense_urban](embb_scenario)
-    - [broadcast](embb_scenario)
-    - [train](embb_scenario)
-    - [vehicle](embb_scenario)
-    - [airplane](embb_scenario)
-    - [automation](urllc_scenario)
-    - [remote_control](urllc_scenario)
-    - [monitoring](urllc_scenario)
-    - [medium_voltage](urllc_scenario)
-    - [high_voltage](urllc_scenario)
-    - [its](urllc_scenario)
-    - [v2n](other_service)
-    - [vehicle to network](other_service)
-    - [vehicle network](other_service)
-    - [v2x](other_service)
-    - [vehicle to anything](other_service)
-    - [massive connectivity](other_service)
-    - [connectivity](other_service)
-    - [drone](other_service)
-    - [remote drone](other_service)
-    - [assisted surgery](other_service)
-    - [control surgery](other_service)
-    - [streaming](other_service)
+- regex: number
+  examples: |
+    - ^[1-9][0-9]?$|^100$
