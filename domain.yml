@@ -28,6 +28,9 @@ intents:
 entities:
 - type_service
 - number
+- embb_scenario
+- urllc_scenario
+- other_service
 slots:
   number:
     type: rasa.shared.core.slots.FloatSlot
@@ -44,20 +47,61 @@ slots:
     values:
     - embb
     - urllc
-    - mmtc
+    - other
+  embb_scenario:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - urban
+    - rural
+    - indoor
+    - crowd
+    - dense_urban
+    - broadcast
+    - train
+    - vehicle
+    - airplane
+  urllc_scenario:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - automation
+    - remote_control
+    - monitoring
+    - medium_voltage
+    - high_voltage
+    - its
   throughput:
     type: rasa.shared.core.slots.FloatSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
-    max_value: 1.0
+    max_value: 1000.0
     min_value: 0.0
   up_throughput:
     type: rasa.shared.core.slots.FloatSlot
     initial_value: null
     auto_fill: true
     influence_conversation: false
-    max_value: 1.0
+    max_value: 1000.0
+    min_value: 0.0
+  user_throughput:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1000.0
+    min_value: 0.0
+  user_up_throughput:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1000.0
     min_value: 0.0
   availability:
     type: rasa.shared.core.slots.FloatSlot
@@ -71,7 +115,7 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
-    max_value: 10.0
+    max_value: 100.0
     min_value: 0.0
   device_velocity:
     type: rasa.shared.core.slots.FloatSlot
@@ -87,10 +131,99 @@ slots:
     influence_conversation: false
     max_value: 10000.0
     min_value: 0.0
+  mmte:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  continuity:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  access:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  user_eq:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 100000.0
+    min_value: 0.0
+  dLThptPerSlice:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  dLThptPerUser:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  uLThptPerSlice:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  uLThptPerUser:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  jitter:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  latency:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  maxNumberofUsers:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  packetLoss:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+  otherService:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hello! How can I help you?
-  - text: Hi! I'm your Service Request  Assistant.
+  - text: Hi! I'm your Service Request  Assistant. What do you need?
   utter_ask_email:
   - text: |
       What is your email address?
@@ -106,20 +239,26 @@ responses:
       title: eMBB
     - payload: /inform{{"type_service":"urllc"}}
       title: URLLC
-    - payload: /inform{{"type_service":"mmtc"}}
-      title: mMTC
+    - payload: /inform{{"type_service":"MIoT"}}
+      title: MIoT
+    - payload: /inform{{"type_service":"V2X"}}
+      title: V2X
+    - payload: /inform{{"type_service":"HMTC"}}
+      title: HMTC
     text: Which type of service do you want to request?
   utter_welcome:
   - text: You're welcome!
   utter_requested_service:
   - text: Great! You requested a service {type_service}
   utter_ask_service:
-  - text: |-
-      Wich type of service do you want to request? 
-      You can request me service like: 
-      - eMBB 
-      - URLLC 
-      - mMTC
+  - buttons:
+    - payload: /inform{{"type_service":"embb"}}
+      title: eMBB
+    - payload: /inform{{"type_service":"urllc"}}
+      title: URLLC
+    - payload: /inform{{"type_service":"other"}}
+      title: Other
+    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC)
   utter_requested_service_SLA:
   - text: Great. You requested the service {type_service}. Would you like to specify the requirements for that service (SLA)?
   utter_no_sla:
@@ -134,38 +273,151 @@ responses:
   - text: Availability {number} requested.
   utter_throughput_requested:
   - text: Throughput {number} requested.
-  utter_ask_urllc_form_availability:
+  utter_ask_service_form_availability:
   - text: Availability of requested service (%), e.g., 99.5, 99.99?
   utter_collect_metrics:
-  - text: Please, inform the minimum set of attributes needed for {type_service} service.
+  - text: 'Please, inform the minimum set of attributes needed for service: {otherService}.'
   utter_ask_urllc_form_throughput:
-  - text: Downlink throughput per UE (kbps)?
-  utter__ask_urllc_form_up_throughput:
-  - text: Uplink throughput per UE (kbps)?
+  - text: Maximum downlink throughput per UE (Mbps)?
+  utter_ask_urllc_form_up_throughput:
+  - text: Maximum uplink throughput per UE (Mbps)?
   utter_ask_urllc_form_qos:
   - text: Service quality of service (QoS)?
   utter_ask_urllc_form_device_velocity:
   - text: Supported device velocity (m/s)?
-  utter_ask_urllc_form_ue_density:
-  - text: User equipment density (number per Km²)?
+  utter_ask_service_form_maxNumberofUsers:
+  - text: Maximum number of users in slice?
+  utter_ask_embb_form_access:
+  - text: User data access?
+  utter_ask_embb_form_continuity:
+  - text: Session and Service Continuity support?
+  utter_ask_service_form_dLThptPerSlice:
+  - text: Guaranteed Downlink Throughput per slice (Mbps)?
+  utter_ask_service_form_dLThptPerUser:
+  - text: Guaranteed Downlink Throughput per user (kbps)?
+  utter_ask_embb_form_mmte:
+  - text: MMTel support?
+  utter_ask_embb_form_user_eq:
+  - text: Number of user equipments?
+  utter_ask_service_form_qos:
+  - text: Quality of service (QoS) for Access Network (5QI from [3GPP/ETSI](https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/16.06.00_60/ts_123501v160600p.pdf))?
+  utter_utter_ask_embb_form_throughput:
+  - text: Maximum downlink throughput per UE (Mbps)?
+  utter_ask_embb_form_throughput:
+  - text: Maximum downlink throughput per user equipment (Mbps)?
+  utter_ask_embb_scenario:
+  - buttons:
+    - payload: /inform{{"embb_scenario":"urban"}}
+      title: Urban
+    - payload: /inform{{"embb_scenario":"rural"}}
+      title: Rural
+    - payload: /inform{{"embb_scenario":"indoor"}}
+      title: Indoor
+    - payload: /inform{{"embb_scenario":"crowd"}}
+      title: BB access in a crowd
+    - payload: /inform{{"embb_scenario":"dense_urban"}}
+      title: Dense urban
+    - payload: /inform{{"embb_scenario":"broadcast"}}
+      title: Broadcast-like services
+    - payload: /inform{{"embb_scenario":"train"}}
+      title: High-speed train
+    - payload: /inform{{"embb_scenario":"vehicle"}}
+      title: High-speed vehicle
+    - payload: /inform{{"embb_scenario":"airplane"}}
+      title: Airplanes connectivity
+    text: In which scenario will the service run?
+  utter_ask_urllc_scenario:
+  - buttons:
+    - payload: /inform{{"urllc_scenario":"automation"}}
+      title: Discrete automation
+    - payload: /inform{{"urllc_scenario":"remote_control"}}
+      title: Remote Control
+    - payload: /inform{{"urllc_scenario":"monitoring"}}
+      title: Monitoring
+    - payload: /inform{{"urllc_scenario":"medium_voltage"}}
+      title: Electricity - Medium
+    - payload: /inform{{"urllc_scenario":"high_voltage"}}
+      title: Electricity - High
+    - payload: /inform{{"urllc_scenario":"its"}}
+      title: Intelligent Transport Systems
+    text: In which scenario will the service run?
+  utter_requested_embb_service:
+  - text: |-
+      Great! Your request will be deployed as follows:
+       - Type of service: {type_service}
+       - Scenario: {embb_scenario}
+  utter_requested_urllc_service:
+  - text: |-
+      Great! Your request will be deployed as follows:
+       - Type of service:: {type_service}
+       - Scenario: {urllc_scenario}
+  utter_ask_otherService_form_otherService:
+  - text: Please, characterize the type of service based on vertical industry applications, e.g., v2n, v2x, massive connectivity, remote drone, surgery, streaming...
+  - text: Now, we need more details about your service.  Based on vertical industries, which application do you want to request? (E.g.,  v2n, v2x, massive connectivity, remote drone, surgery, streaming, etc)
+  utter_ask_service_description:
+  - text: Please, describe in more detail the service including the type of traffic. (E.g., v2v, Real-time sensing, live video feed, remote control, server-client sharing of data, gaming,...)
+  utter_ask_service_form_jitter:
+  - text: E2E Jitter (ms)?
+  utter_ask_service_form_latency:
+  - text: E2E latency (ms)?
+  utter_ask_service_form_packetLoss:
+  - text: E2E packet loss (%)?
+  utter_ask_service_form_uLThptPerSlice:
+  - text: Guaranteed Uplink Throughput per slice (Mbps)?
+  utter_ask_service_form_uLThptPerUser:
+  - text: Guaranteed Uplink Throughput per user (kbps)?
+  utter_summary_service:
+  - text: |-
+      Great! The attributes of your network slicing are:
+       - Application: {otherService}
+       - Availability of service: {availability} %
+       - Guaranteed downlink throughput per slice: {dLThptPerSlice} Mbps
+       - Guaranteed downlink throughput per user: {dLThptPerUser} Kbps
+       - End-to-end jitter: {jitter} ms
+       - End-to-end latency: {latency} ms 
+       - Maximum number of user: {maxNumberofUsers}
+       - Packet Loss: {packetLoss} %
+       - Quality of Service (5QI): {qos}
+       - Guaranteed uplink throughput per slice: {uLThptPerSlice} Mbps
+       - Guaranteed uplink throughput per user: {uLThptPerUser} Kbps
 actions:
 - utter_greet
 forms:
-  urllc_form:
+  service_form:
     required_slots:
       availability:
       - entity: number
         type: from_entity
-      device_velocity:
+      dLThptPerSlice:
+      - entity: number
+        type: from_entity
+      dLThptPerUser:
+      - entity: number
+        type: from_entity
+      jitter:
+      - entity: number
+        type: from_entity
+      latency:
+      - entity: number
+        type: from_entity
+      maxNumberofUsers:
+      - entity: number
+        type: from_entity
+      packetLoss:
       - entity: number
         type: from_entity
       qos:
       - entity: number
         type: from_entity
-      ue_density:
+      uLThptPerSlice:
       - entity: number
         type: from_entity
-      up_throughput:
+      uLThptPerUser:
       - entity: number
+        type: from_entity
+  otherService_form:
+    required_slots:
+      otherService:
+      - entity: other_service
         type: from_entity
 e2e_actions: []
