@@ -31,6 +31,7 @@ entities:
 - embb_scenario
 - urllc_scenario
 - other_service
+- email
 slots:
   number:
     type: rasa.shared.core.slots.FloatSlot
@@ -220,6 +221,11 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hello! How can I help you?
@@ -382,6 +388,9 @@ responses:
        - Guaranteed uplink throughput per user: {uLThptPerUser} Kbps
 actions:
 - utter_greet
+- action_service_embb
+- action_service_urllc
+- action_service_other
 forms:
   service_form:
     required_slots:

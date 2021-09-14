@@ -54,3 +54,8 @@ stories:
   - active_loop: service_form
   - active_loop: null
   - action: utter_summary_service
+- story: test action server
+  steps:
+  - intent: thank
+  - action: utter_ask_email
+  - intent: inform

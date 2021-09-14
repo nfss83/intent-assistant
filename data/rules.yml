@@ -1,9 +1,5 @@
 version: "2.0"
 rules:
-- rule: Thank Rule
-  steps:
-  - intent: thank
-  - action: utter_welcome
 - rule: answer out of scope
   steps:
   - intent: out_of_scope
