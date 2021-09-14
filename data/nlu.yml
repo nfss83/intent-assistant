@@ -32,6 +32,9 @@ nlu:
     - Hii
     - Heloo
     - HI
+    - heloo
+    - Helo
+    - Helllo
 - intent: farewell
   examples: |
     - bye
@@ -190,6 +193,7 @@ nlu:
     - Open a ticket
     - I want to open a ticket
     - I want to ask ticket car
+    - I want to fuck you
 - intent: affirm
   examples: |
     - yes
@@ -216,6 +220,7 @@ nlu:
     - Yes I do
     - Yes please
     - Yes please!
+    - ok
 - intent: deny
   examples: |
     - no
@@ -270,6 +275,7 @@ nlu:
     - I nee to request a network service
     - Networ service
     - Yes, I want to request a service
+    - I need to request a network slicing
 - intent: inform
   examples: |
     - [eMBB](type_service)
