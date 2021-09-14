@@ -17,7 +17,7 @@ stories:
     - embb_scenario: ''
   - slot_was_set:
     - embb_scenario: null
-  - action: utter_requested_embb_service
+  - action: action_service_embb
 - story: Story urllc
   steps:
   - intent: greet
@@ -35,7 +35,7 @@ stories:
     - urllc_scenario: ''
   - slot_was_set:
     - urllc_scenario: null
-  - action: utter_requested_urllc_service
+  - action: action_service_urllc
 - story: Story other
   steps:
   - intent: greet
@@ -53,9 +53,13 @@ stories:
   - action: service_form
   - active_loop: service_form
   - active_loop: null
-  - action: utter_summary_service
+  - action: action_service_other
 - story: test action server
   steps:
   - intent: thank
   - action: utter_ask_email
   - intent: inform
+    entities:
+    - email: ''
+  - slot_was_set:
+    - email: filled
