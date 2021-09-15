@@ -316,3 +316,6 @@ nlu:
     - [assisted surgery](other_service)
     - [control surgery](other_service)
     - [streaming](other_service)
+    - [other](type_service)
+    - [embb](type_service)
+    - [urllc](type_service)

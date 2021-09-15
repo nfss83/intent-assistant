@@ -14,7 +14,7 @@ stories:
   - action: utter_ask_embb_scenario
   - intent: inform
     entities:
-    - embb_scenario: ''
+    - embb_scenario
   - slot_was_set:
     - embb_scenario: null
   - action: action_service_embb

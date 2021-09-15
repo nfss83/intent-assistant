@@ -258,11 +258,11 @@ responses:
   - text: Great! You requested a service {type_service}
   utter_ask_service:
   - buttons:
-    - payload: /inform{{"type_service":"embb"}}
+    - payload: embb
       title: eMBB
-    - payload: /inform{{"type_service":"urllc"}}
+    - payload: urllc
       title: URLLC
-    - payload: /inform{{"type_service":"other"}}
+    - payload: other
       title: Other
     text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC)
   utter_requested_service_SLA:
