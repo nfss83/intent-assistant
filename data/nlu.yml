@@ -279,7 +279,6 @@ nlu:
 - intent: inform
   examples: |
     - [eMBB](type_service)
-    - [mMTC](type_service)
     - [URLLC](type_service)
     - [90](number)
     - [95](number)

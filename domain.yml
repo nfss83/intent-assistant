@@ -313,38 +313,38 @@ responses:
   - text: Maximum downlink throughput per user equipment (Mbps)?
   utter_ask_embb_scenario:
   - buttons:
-    - payload: /inform{{"embb_scenario":"urban"}}
+    - payload: urban
       title: Urban
     - payload: /inform{{"embb_scenario":"rural"}}
       title: Rural
-    - payload: /inform{{"embb_scenario":"indoor"}}
+    - payload: indoor
       title: Indoor
-    - payload: /inform{{"embb_scenario":"crowd"}}
+    - payload: crowd
       title: BB access in a crowd
-    - payload: /inform{{"embb_scenario":"dense_urban"}}
+    - payload: dense_urban
       title: Dense urban
-    - payload: /inform{{"embb_scenario":"broadcast"}}
+    - payload: broadcast
       title: Broadcast-like services
-    - payload: /inform{{"embb_scenario":"train"}}
+    - payload: train
       title: High-speed train
-    - payload: /inform{{"embb_scenario":"vehicle"}}
+    - payload: vehicle
       title: High-speed vehicle
-    - payload: /inform{{"embb_scenario":"airplane"}}
+    - payload: airplane
       title: Airplanes connectivity
     text: In which scenario will the service run?
   utter_ask_urllc_scenario:
   - buttons:
-    - payload: /inform{{"urllc_scenario":"automation"}}
+    - payload: automation
       title: Discrete automation
-    - payload: /inform{{"urllc_scenario":"remote_control"}}
+    - payload: remote_control
       title: Remote Control
-    - payload: /inform{{"urllc_scenario":"monitoring"}}
+    - payload: monitoring
       title: Monitoring
-    - payload: /inform{{"urllc_scenario":"medium_voltage"}}
+    - payload: medium_voltage
       title: Electricity - Medium
-    - payload: /inform{{"urllc_scenario":"high_voltage"}}
+    - payload: high_voltage
       title: Electricity - High
-    - payload: /inform{{"urllc_scenario":"its"}}
+    - payload: its
       title: Intelligent Transport Systems
     text: In which scenario will the service run?
   utter_requested_embb_service:

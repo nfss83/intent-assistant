@@ -1,6 +1,6 @@
 version: "2.0"
 stories:
-- story: Story embb
+- story: Story service embb
   steps:
   - intent: greet
   - action: utter_greet
@@ -14,11 +14,11 @@ stories:
   - action: utter_ask_embb_scenario
   - intent: inform
     entities:
-    - embb_scenario
+    - embb_scenario: ''
   - slot_was_set:
     - embb_scenario: null
   - action: action_service_embb
-- story: Story urllc
+- story: Story service urllc
   steps:
   - intent: greet
   - action: utter_greet
@@ -54,12 +54,3 @@ stories:
   - active_loop: service_form
   - active_loop: null
   - action: action_service_other
-- story: test action server
-  steps:
-  - intent: thank
-  - action: utter_ask_email
-  - intent: inform
-    entities:
-    - email: ''
-  - slot_was_set:
-    - email: filled
