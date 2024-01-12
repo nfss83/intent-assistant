@@ -322,3 +322,4 @@ nlu:
     - [urllc](type_service)
     - medical
     - [miot](type_service)
+    - standard
