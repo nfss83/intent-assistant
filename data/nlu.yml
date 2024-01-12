@@ -35,6 +35,7 @@ nlu:
     - heloo
     - Helo
     - Helllo
+    - Good Afternoon
 - intent: farewell
   examples: |
     - bye
