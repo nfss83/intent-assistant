@@ -320,6 +320,6 @@ nlu:
     - [other](type_service)
     - [embb](type_service)
     - [urllc](type_service)
-    - medical
+    - [medical](miot_scenario)
     - [miot](type_service)
-    - standard
+    - [standard](miot_scenario)
