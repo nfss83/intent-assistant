@@ -321,4 +321,4 @@ nlu:
     - [embb](type_service)
     - [urllc](type_service)
     - medical
-    - miot
+    - [miot](type_service)
