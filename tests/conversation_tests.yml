@@ -1,6 +1,6 @@
 version: "2.0"
 stories:
-- story: Story from Conversation ID e46d732adc2b400ea6e41798b4beae3c
+- story: Story from Conversation ID 1d1f7ef342ba4c08b6f73c6bf55861dd
   steps:
   - intent: greet
     user: |-
@@ -8,23 +8,32 @@ stories:
   - action: utter_greet
   - intent: request
     user: |-
-      Network service
+      service
   - action: utter_ask_service
   - intent: inform
     user: |-
-      [URLLC](type_service)
+      [embb](type_service)
   - slot_was_set:
-    - type_service: URLLC
-  - action: utter_requested_service_SLA
-  - intent: affirm
+    - type_service: embb
+- story: Story from Conversation ID 7916d4a2a17f4da9ac340ded91b4cb3d
+  steps:
+  - intent: greet
     user: |-
-      yes
-  - slot_was_set:
-    - type_service: URLLC
-  - action: utter_availability
+      hi
+  - action: utter_greet
+  - intent: request
+    user: |-
+      service
+  - action: utter_ask_service
   - intent: inform
     user: |-
-      [91](number)
+      [embb](type_service)
   - slot_was_set:
-    - number: '91'
-  - action: utter_availability_requested
+    - type_service: embb
+  - action: utter_ask_embb_scenario
+  - intent: inform
+    user: |-
+      [vehicle](embb_scenario)
+  - slot_was_set:
+    - embb_scenario: vehicle
+  - action: action_default_fallback

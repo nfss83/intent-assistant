@@ -31,7 +31,7 @@ entities:
 - embb_scenario
 - urllc_scenario
 - other_service
-- email
+- miot_scenario
 slots:
   number:
     type: rasa.shared.core.slots.FloatSlot
@@ -46,6 +46,7 @@ slots:
     auto_fill: true
     influence_conversation: true
     values:
+    - miot
     - embb
     - urllc
     - other
@@ -226,6 +227,14 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
+  miot_scenario:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - medical
+    - standard
 responses:
   utter_greet:
   - text: Hello! How can I help you?
@@ -262,9 +271,11 @@ responses:
       title: eMBB
     - payload: urllc
       title: URLLC
+    - payload: miot
+      title: MIoT
     - payload: other
       title: Other
-    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC)
+    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC, Massive IoT - MIoT)
   utter_requested_service_SLA:
   - text: Great. You requested the service {type_service}. Would you like to specify the requirements for that service (SLA)?
   utter_no_sla:
@@ -315,7 +326,7 @@ responses:
   - buttons:
     - payload: urban
       title: Urban
-    - payload: /inform{{"embb_scenario":"rural"}}
+    - payload: rural
       title: Rural
     - payload: indoor
       title: Indoor
@@ -386,11 +397,19 @@ responses:
        - Quality of Service (5QI): {qos}
        - Guaranteed uplink throughput per slice: {uLThptPerSlice} Mbps
        - Guaranteed uplink throughput per user: {uLThptPerUser} Kbps
+  utter_ask_miot_scenario:
+  - buttons:
+    - payload: medical
+      title: Medical Monitoring
+    - payload: standard
+      title: Standard
+    text: In which scenario will the service run?
 actions:
 - utter_greet
 - action_service_embb
 - action_service_urllc
 - action_service_other
+- action_service_miot
 forms:
   service_form:
     required_slots:

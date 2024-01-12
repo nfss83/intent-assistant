@@ -277,6 +277,7 @@ nlu:
     - Networ service
     - Yes, I want to request a service
     - I need to request a network slicing
+    - Service
 - intent: inform
   examples: |
     - [eMBB](type_service)
@@ -319,3 +320,5 @@ nlu:
     - [other](type_service)
     - [embb](type_service)
     - [urllc](type_service)
+    - medical
+    - miot
