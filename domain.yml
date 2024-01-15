@@ -273,9 +273,13 @@ responses:
       title: URLLC
     - payload: miot
       title: MIoT
+    - payload: v2x
+      title: V2X
+    - payload: hmtc
+      title: HMTC
     - payload: other
       title: Other
-    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC, Massive IoT - MIoT)
+    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC, Massive IoT - MIoT, Vehicle-to-Everything - V2X, High-Performance Machine-Type Communications - HMTC)
   utter_requested_service_SLA:
   - text: Great. You requested the service {type_service}. Would you like to specify the requirements for that service (SLA)?
   utter_no_sla:
@@ -401,6 +405,18 @@ responses:
   - buttons:
     - payload: medical
       title: Medical Monitoring
+    - payload: standard
+      title: Standard
+    text: In which scenario will the service run?
+  utter_ask_v2x_scenario:
+  - buttons:
+    - payload: advanced
+      title: Advanced Driving
+    - payload: remote
+      title: Remote Driving
+    text: In which scenario will the service run?
+  utter_ask_hmtc_scenario:
+  - buttons:
     - payload: standard
       title: Standard
     text: In which scenario will the service run?
