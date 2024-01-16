@@ -86,9 +86,9 @@ stories:
   - action: utter_ask_v2x_scenario
   - intent: inform
     entities:
-    - miot_scenario: ''
+    - v2x_scenario: ''
   - slot_was_set:
-    - miot_scenario: null
+    - v2x_scenario: null
   - action: action_service_v2x
 - story: Story service hmtc
   steps:
@@ -104,9 +104,9 @@ stories:
   - action: utter_ask_hmtc_scenario
   - intent: inform
     entities:
-    - miot_scenario: ''
+    - hmtc_scenario: ''
   - slot_was_set:
-    - miot_scenario: null
+    - hmtc_scenario: null
   - action: action_service_hmtc
 - story: Story service hdllc
   steps:
@@ -122,7 +122,7 @@ stories:
   - action: utter_ask_hdllc_scenario
   - intent: inform
     entities:
-    - miot_scenario: ''
+    - hdllc_scenario: ''
   - slot_was_set:
-    - miot_scenario: null
+    - hdllc_scenario: null
   - action: action_service_hdllc

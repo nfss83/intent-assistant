@@ -32,6 +32,9 @@ entities:
 - urllc_scenario
 - other_service
 - miot_scenario
+- hdllc_scenario
+- hmtc_scenario
+- v2x_scenario
 slots:
   number:
     type: rasa.shared.core.slots.FloatSlot
@@ -49,6 +52,9 @@ slots:
     - miot
     - embb
     - urllc
+    - v2x
+    - hmtc
+    - hdllc
     - other
   embb_scenario:
     type: rasa.shared.core.slots.CategoricalSlot
@@ -235,6 +241,21 @@ slots:
     values:
     - medical
     - standard
+  hdllc_scenario:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  hmtc_scenario:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  v2x_scenario:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hello! How can I help you?
@@ -435,6 +456,9 @@ actions:
 - action_service_urllc
 - action_service_other
 - action_service_miot
+- action_service_v2x
+- action_service_hmtc
+- action_service_hdllc
 forms:
   service_form:
     required_slots:

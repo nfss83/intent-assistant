@@ -278,6 +278,9 @@ nlu:
     - Yes, I want to request a service
     - I need to request a network slicing
     - Service
+    - I need a network service
+    - I need to request a service
+    - Yes. I need a service
 - intent: inform
   examples: |
     - [eMBB](type_service)
