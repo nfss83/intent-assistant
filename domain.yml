@@ -277,9 +277,11 @@ responses:
       title: V2X
     - payload: hmtc
       title: HMTC
+    - payload: hdllc
+      title: HDLLC
     - payload: other
       title: Other
-    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC, Massive IoT - MIoT, Vehicle-to-Everything - V2X, High-Performance Machine-Type Communications - HMTC)
+    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC, Massive IoT - MIoT, Vehicle-to-Everything - V2X, High-Performance Machine-Type Communications - HMTC, High Data-Rate and Low-Latency Communications)
   utter_requested_service_SLA:
   - text: Great. You requested the service {type_service}. Would you like to specify the requirements for that service (SLA)?
   utter_no_sla:
@@ -419,6 +421,13 @@ responses:
   - buttons:
     - payload: standard
       title: Standard
+    text: In which scenario will the service run?
+  utter_ask_hdllc_scenario:
+  - buttons:
+    - payload: rendering
+      title: Rendering
+    - payload: gaming
+      title: Gaming
     text: In which scenario will the service run?
 actions:
 - utter_greet

@@ -72,3 +72,57 @@ stories:
   - slot_was_set:
     - miot_scenario: null
   - action: action_service_miot
+- story: Story service v2x
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: v2x
+  - slot_was_set:
+    - type_service: v2x
+  - action: utter_ask_v2x_scenario
+  - intent: inform
+    entities:
+    - miot_scenario: ''
+  - slot_was_set:
+    - miot_scenario: null
+  - action: action_service_v2x
+- story: Story service hmtc
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: hmtc
+  - slot_was_set:
+    - type_service: hmtc
+  - action: utter_ask_hmtc_scenario
+  - intent: inform
+    entities:
+    - miot_scenario: ''
+  - slot_was_set:
+    - miot_scenario: null
+  - action: action_service_hmtc
+- story: Story service hdllc
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request
+  - action: utter_ask_service
+  - intent: inform
+    entities:
+    - type_service: hdllc
+  - slot_was_set:
+    - type_service: hdllc
+  - action: utter_ask_hdllc_scenario
+  - intent: inform
+    entities:
+    - miot_scenario: ''
+  - slot_was_set:
+    - miot_scenario: null
+  - action: action_service_hdllc
