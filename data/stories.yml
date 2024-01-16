@@ -101,12 +101,6 @@ stories:
     - type_service: hmtc
   - slot_was_set:
     - type_service: hmtc
-  - action: utter_ask_hmtc_scenario
-  - intent: inform
-    entities:
-    - hmtc_scenario: ''
-  - slot_was_set:
-    - hmtc_scenario: null
   - action: action_service_hmtc
 - story: Story service hdllc
   steps:

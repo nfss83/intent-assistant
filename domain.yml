@@ -33,7 +33,6 @@ entities:
 - other_service
 - miot_scenario
 - hdllc_scenario
-- hmtc_scenario
 - v2x_scenario
 slots:
   number:
@@ -249,13 +248,6 @@ slots:
     values:
     - rendering
     - gaming
-  hmtc_scenario:
-    type: rasa.shared.core.slots.CategoricalSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-    values:
-    - standard
   v2x_scenario:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
