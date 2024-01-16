@@ -328,4 +328,4 @@ nlu:
     - [standard](miot_scenario)
     - [hdllc](type_service)
     - [rendering](hdllc_scenario)
-    - hmtc
+    - [hmtc](type_service)
