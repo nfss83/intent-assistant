@@ -326,3 +326,5 @@ nlu:
     - [medical](miot_scenario)
     - [miot](type_service)
     - [standard](miot_scenario)
+    - [hdllc](type_service)
+    - [rendering](hdllc_scenario)
