@@ -311,7 +311,7 @@ nlu:
     - [v2n](other_service)
     - [vehicle to network](other_service)
     - [vehicle network](other_service)
-    - [v2x](other_service)
+    - [v2x](type_service)
     - [vehicle to anything](other_service)
     - [massive connectivity](other_service)
     - [connectivity](other_service)

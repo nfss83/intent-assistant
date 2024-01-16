@@ -242,20 +242,28 @@ slots:
     - medical
     - standard
   hdllc_scenario:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
+    type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: false
+    influence_conversation: true
+    values:
+    - rendering
+    - gaming
   hmtc_scenario:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
+    type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: false
+    influence_conversation: true
+    values:
+    - standard
   v2x_scenario:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
+    type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: false
+    influence_conversation: true
+    values:
+    - advanced
+    - remote
 responses:
   utter_greet:
   - text: Hello! How can I help you?
