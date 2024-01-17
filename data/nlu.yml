@@ -331,3 +331,4 @@ nlu:
     - [hmtc](type_service)
     - [gaming](hdllc_scenario)
     - [advanced](v2x_scenario)
+    - [remote](v2x_scenario)
