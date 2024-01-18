@@ -316,7 +316,7 @@ nlu:
     - [massive connectivity](other_service)
     - [connectivity](other_service)
     - [drone](other_service)
-    - [remote drone](other_service)
+    - [remote_drone](other_service)
     - [assisted surgery](other_service)
     - [control surgery](other_service)
     - [streaming](other_service)
