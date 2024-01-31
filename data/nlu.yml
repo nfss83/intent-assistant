@@ -308,11 +308,7 @@ nlu:
     - [medium_voltage](urllc_scenario)
     - [high_voltage](urllc_scenario)
     - [its](urllc_scenario)
-    - [v2n](other_service)
-    - [vehicle to network](other_service)
-    - [vehicle network](other_service)
     - [v2x](type_service)
-    - [vehicle to anything](other_service)
     - [massive connectivity](other_service)
     - [connectivity](other_service)
     - [drone](other_service)
@@ -332,3 +328,10 @@ nlu:
     - [gaming](hdllc_scenario)
     - [advanced](v2x_scenario)
     - [remote](v2x_scenario)
+    - [massive](miot_scenario)
+    - Public Safety
+    - [Assisted Surgey](other_service)
+    - [surgey](other_service)
+    - [Live](other_service) [streaming](other_service)
+    - [150](number)
+    - custom

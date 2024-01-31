@@ -34,6 +34,7 @@ entities:
 - miot_scenario
 - hdllc_scenario
 - v2x_scenario
+- custom_service
 slots:
   number:
     type: rasa.shared.core.slots.FloatSlot
@@ -222,7 +223,7 @@ slots:
     influence_conversation: false
     max_value: 1.0
     min_value: 0.0
-  otherService:
+  customService:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -302,7 +303,9 @@ responses:
       title: HDLLC
     - payload: other
       title: Other
-    text: Which type of service do you want to request? (enhanced mobile broadband - eMBB, ultra-reliable and low-latency communications - URLLC, Massive IoT - MIoT, Vehicle-to-Everything - V2X, High-Performance Machine-Type Communications - HMTC, High Data-Rate and Low-Latency Communications)
+    - payload: custom
+      title: Custom
+    text: Which type of service do you want to request? (enhanced Mobile Broadband - eMBB, Ultra-Reliable and Low-Latency Communications - URLLC, Massive IoT - MIoT, Vehicle-to-Everything - V2X, High-Performance Machine-Type Communications - HMTC, High Data-Rate and Low-Latency Communications - HDLLC)
   utter_requested_service_SLA:
   - text: Great. You requested the service {type_service}. Would you like to specify the requirements for that service (SLA)?
   utter_no_sla:
@@ -344,7 +347,7 @@ responses:
   utter_ask_embb_form_user_eq:
   - text: Number of user equipments?
   utter_ask_service_form_qos:
-  - text: Quality of service (QoS) for Access Network (5QI from [3GPP/ETSI](https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/16.06.00_60/ts_123501v160600p.pdf))?
+  - text: Quality of service (QoS) for Access Network (5QI from [3GPP/ETSI](https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/17.11.00_60/ts_123501v171100p.pdf))?
   utter_utter_ask_embb_form_throughput:
   - text: Maximum downlink throughput per UE (Mbps)?
   utter_ask_embb_form_throughput:
@@ -356,7 +359,7 @@ responses:
     - payload: rural
       title: Rural
     - payload: indoor
-      title: Indoor
+      title: Indoor hotspot
     - payload: crowd
       title: BB access in a crowd
     - payload: dense_urban
@@ -395,9 +398,27 @@ responses:
       Great! Your request will be deployed as follows:
        - Type of service:: {type_service}
        - Scenario: {urllc_scenario}
-  utter_ask_otherService_form_otherService:
-  - text: Please, characterize the type of service based on vertical industry applications, e.g., v2n, v2x, massive connectivity, remote drone, surgery, streaming...
-  - text: Now, we need more details about your service.  Based on vertical industries, which application do you want to request? (E.g.,  v2n, v2x, massive connectivity, remote drone, surgery, streaming, etc)
+  utter_ask_otherService:
+  - buttons:
+    - payload: remote_drone
+      title: Remote drone
+    - payload: surgey
+      title: Assisted Surgey
+    - payload: streaming
+      title: Live Streaming
+    - payload: safety
+      title: Public Safety
+    text: Please, inform the type of service based on vertical industry applications.
+  - buttons:
+    - payload: remote_drone
+      title: Remote Drone
+    - payload: surgey
+      title: Assisted Surgey
+    - payload: streaming
+      title: Live Streaming
+    - payload: safety
+      title: Public Safety
+    text: Based on vertical industries, which application do you want to request?
   utter_ask_service_description:
   - text: Please, describe in more detail the service including the type of traffic. (E.g., v2v, Real-time sensing, live video feed, remote control, server-client sharing of data, gaming,...)
   utter_ask_service_form_jitter:
@@ -428,20 +449,20 @@ responses:
   - buttons:
     - payload: medical
       title: Medical Monitoring
-    - payload: standard
-      title: Standard
+    - payload: massive
+      title: Massive Connectivity
     text: In which scenario will the service run?
   utter_ask_v2x_scenario:
   - buttons:
-    - payload: advanced
+    - payload: advanced_driving
       title: Advanced Driving
-    - payload: remote
+    - payload: remote_driving
       title: Remote Driving
     text: In which scenario will the service run?
   utter_ask_hmtc_scenario:
   - buttons:
-    - payload: standard
-      title: Standard
+    - payload: hmtc
+      title: High-throughput IoT
     text: In which scenario will the service run?
   utter_ask_hdllc_scenario:
   - buttons:
@@ -450,6 +471,8 @@ responses:
     - payload: gaming
       title: Gaming
     text: In which scenario will the service run?
+  utter_ask_customService_form_customService:
+  - text: Now, we need more details about your service. Which application do you want to request? (Inform a short name)
 actions:
 - utter_greet
 - action_service_embb
@@ -459,6 +482,7 @@ actions:
 - action_service_v2x
 - action_service_hmtc
 - action_service_hdllc
+- action_service_custom
 forms:
   service_form:
     required_slots:
@@ -492,9 +516,9 @@ forms:
       uLThptPerUser:
       - entity: number
         type: from_entity
-  otherService_form:
+  customService_form:
     required_slots:
-      otherService:
-      - entity: other_service
+      customService:
+      - entity: custom_service
         type: from_entity
 e2e_actions: []
