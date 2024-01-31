@@ -134,7 +134,7 @@ stories:
   - action: utter_ask_otherService
   - intent: inform
     entities:
-    - type_service: ''
+    - other_service: ''
   - slot_was_set:
-    - type_service: null
+    - other_service: null
   - action: action_service_other

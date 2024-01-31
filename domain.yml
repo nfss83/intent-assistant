@@ -257,6 +257,16 @@ slots:
     values:
     - advanced
     - remote
+  other_service:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - remote_drone
+    - surgey
+    - streaming
+    - safety
 responses:
   utter_greet:
   - text: Hello! How can I help you?
