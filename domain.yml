@@ -465,9 +465,9 @@ responses:
     text: In which scenario will the service run?
   utter_ask_v2x_scenario:
   - buttons:
-    - payload: advanced_driving
+    - payload: advanced
       title: Advanced Driving
-    - payload: remote_driving
+    - payload: remote
       title: Remote Driving
     text: In which scenario will the service run?
   utter_ask_hmtc_scenario:
