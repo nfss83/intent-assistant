@@ -34,7 +34,7 @@ entities:
 - miot_scenario
 - hdllc_scenario
 - v2x_scenario
-- custom_service
+- customService
 slots:
   number:
     type: rasa.shared.core.slots.FloatSlot
@@ -224,7 +224,7 @@ slots:
     influence_conversation: false
     max_value: 1.0
     min_value: 0.0
-  custom_service:
+  customService:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
