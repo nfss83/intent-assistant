@@ -29,7 +29,7 @@ stories:
     - type_service: custom
   - slot_was_set:
     - type_service: custom
-  - action: uter_ask_custom_service
+  - action: utter_ask_custom_service
   - intent: inform
     entities:
     - customService: ''
