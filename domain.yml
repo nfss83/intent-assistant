@@ -484,6 +484,8 @@ responses:
     text: In which scenario will the service run?
   utter_ask_customService_form_customService:
   - text: Now, we need more details about your service. Which application do you want to request? (Inform a short name)
+  utter_ask_custom_service:
+  - text: Now, we need more details about your service. Which application do you want to request? (Inform a short name, please)
 actions:
 - utter_greet
 - action_service_embb

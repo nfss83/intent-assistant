@@ -29,9 +29,12 @@ stories:
     - type_service: custom
   - slot_was_set:
     - type_service: custom
-  - action: customService_form
-  - active_loop: customService_form
-  - active_loop: null
+  - action: uter_ask_custom_service
+  - intent: inform
+    entities:
+    - customService: ''
+  - slot_was_set:
+    - customService: null
   - action: service_form
   - active_loop: service_form
   - active_loop: null

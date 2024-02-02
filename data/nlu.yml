@@ -329,3 +329,5 @@ nlu:
     - [150](number)
     - [custom](type_service)
     - [connectivity](customService)
+    - agriculture
+    - education
