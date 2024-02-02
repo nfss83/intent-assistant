@@ -224,7 +224,7 @@ slots:
     influence_conversation: false
     max_value: 1.0
     min_value: 0.0
-  customService:
+  custom_service:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
