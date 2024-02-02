@@ -328,3 +328,4 @@ nlu:
     - [surgey](other_service)
     - [150](number)
     - [custom](type_service)
+    - [connectivity](other_service)
