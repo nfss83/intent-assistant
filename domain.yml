@@ -530,6 +530,6 @@ forms:
   customService_form:
     required_slots:
       customService:
-      - entity: custom_service
+      - entity: customService
         type: from_entity
 e2e_actions: []
