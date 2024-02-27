@@ -1,0 +1,442 @@
+[
+  {
+    "text": "What is up?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.4601328670978546
+    }
+  },
+  {
+    "text": "ey boss",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "farewell",
+      "confidence": 0.5538652539253235
+    }
+  },
+  {
+    "text": "Hdjejene",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4827007055282593
+    }
+  },
+  {
+    "text": "Can you make sandwiches?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9085416793823242
+    }
+  },
+  {
+    "text": "that's right",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.6742219924926758
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.8428265452384949
+    }
+  },
+  {
+    "text": "urban",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.41338178515434265
+    }
+  },
+  {
+    "text": "crowd",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "farewell",
+      "confidence": 0.2557080388069153
+    }
+  },
+  {
+    "text": "dense_urban",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9501489400863647
+    }
+  },
+  {
+    "text": "other",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.6174391508102417
+    }
+  },
+  {
+    "text": "standard",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.5694668889045715
+    }
+  },
+  {
+    "text": "Hola",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.5064234137535095
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "farewell",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7445539832115173
+    }
+  },
+  {
+    "text": "appreciate it",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9131543636322021
+    }
+  },
+  {
+    "text": "asd",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7382286190986633
+    }
+  },
+  {
+    "text": "title",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.46904173493385315
+    }
+  },
+  {
+    "text": "yes thanks",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.999933123588562
+    }
+  },
+  {
+    "text": "Neither",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7806479930877686
+    }
+  },
+  {
+    "text": "indoor",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8556602597236633
+    }
+  },
+  {
+    "text": "v2x",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5201021432876587
+    }
+  },
+  {
+    "text": "rendering",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5027136206626892
+    }
+  },
+  {
+    "text": "ayyyy whaddup",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.688470184803009
+    }
+  },
+  {
+    "text": "bonjour",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.7752144932746887
+    }
+  },
+  {
+    "text": "catch you later",
+    "intent": "farewell",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.4001520574092865
+    }
+  },
+  {
+    "text": "my tv isn't working",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "request",
+      "confidence": 0.6368409991264343
+    }
+  },
+  {
+    "text": "add two plus two",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "request",
+      "confidence": 0.3772544264793396
+    }
+  },
+  {
+    "text": "Can you please send me an uber",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9304844737052917
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8572812676429749
+    }
+  },
+  {
+    "text": "vehicle",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.29417046904563904
+    }
+  },
+  {
+    "text": "What are you able to do?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9708849191665649
+    }
+  },
+  {
+    "text": "foolish",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9245887398719788
+    }
+  },
+  {
+    "text": "joke",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "farewell",
+      "confidence": 0.4375356137752533
+    }
+  },
+  {
+    "text": "Can I get a hamburger?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "request",
+      "confidence": 0.8500560522079468
+    }
+  },
+  {
+    "text": "That would be great",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9527822136878967
+    }
+  },
+  {
+    "text": "no thanks",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.6925630569458008
+    }
+  },
+  {
+    "text": "safety",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.33338451385498047
+    }
+  },
+  {
+    "text": "surgey",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8531381487846375
+    }
+  },
+  {
+    "text": "greetings",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.3048263490200043
+    }
+  },
+  {
+    "text": "Good Afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "farewell",
+      "confidence": 0.798910915851593
+    }
+  },
+  {
+    "text": "bye was nice talking to you",
+    "intent": "farewell",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.952603816986084
+    }
+  },
+  {
+    "text": "farewell",
+    "intent": "farewell",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9604171514511108
+    }
+  },
+  {
+    "text": "take care",
+    "intent": "farewell",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9903794527053833
+    }
+  },
+  {
+    "text": "yes thanks",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9995003938674927
+    }
+  },
+  {
+    "text": "how old are you?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.9692708849906921
+    }
+  },
+  {
+    "text": "how about the forecast",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.6843655109405518
+    }
+  },
+  {
+    "text": "Can you call me back ?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9928012490272522
+    }
+  },
+  {
+    "text": "please do",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9570374488830566
+    }
+  },
+  {
+    "text": "decline",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.6853195428848267
+    }
+  },
+  {
+    "text": "deny",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.48852187395095825
+    }
+  },
+  {
+    "text": "How can I help you?",
+    "intent": "request",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9995521306991577
+    }
+  },
+  {
+    "text": "broadcast",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.36990293860435486
+    }
+  },
+  {
+    "text": "airplane",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.4112241268157959
+    }
+  },
+  {
+    "text": "its",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6426371932029724
+    }
+  },
+  {
+    "text": "massive",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.9460552930831909
+    }
+  },
+  {
+    "text": "connectivity",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.46535059809684753
+    }
+  }
+]

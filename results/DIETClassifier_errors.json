@@ -1,0 +1,436 @@
+[
+  {
+    "text": "urban",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "urban",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "crowd",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "crowd",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "dense_urban",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "dense_urban",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "automation",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "automation",
+        "entity": "urllc_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "remote_drone",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "remote_drone",
+        "entity": "other_service"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "v2x_scenario",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.9407705068588257,
+        "value": "remote_drone",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "other",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "other",
+        "entity": "type_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "standard",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "standard",
+        "entity": "miot_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "custom",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "custom",
+        "entity": "type_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what is the square root of 5",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 27,
+        "end": 28,
+        "confidence_entity": 0.9984740614891052,
+        "value": "5",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "indoor",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "indoor",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "monitoring",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "monitoring",
+        "entity": "urllc_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "v2x",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "v2x",
+        "entity": "type_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "streaming",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "streaming",
+        "entity": "other_service"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "hdllc_scenario",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.6626623272895813,
+        "value": "streaming",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "rendering",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "rendering",
+        "entity": "hdllc_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "rural",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "rural",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "vehicle",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "vehicle",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "remote_control",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "remote_control",
+        "entity": "urllc_scenario"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "other_service",
+        "start": 0,
+        "end": 14,
+        "confidence_entity": 0.9792447090148926,
+        "value": "remote_control",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "advanced",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "advanced",
+        "entity": "v2x_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "remote",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "remote",
+        "entity": "v2x_scenario"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "other_service",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.8644281625747681,
+        "value": "remote",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "train",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "train",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "miot",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "miot",
+        "entity": "type_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "gaming",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "gaming",
+        "entity": "hdllc_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "safety",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "safety",
+        "entity": "other_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "surgey",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "surgey",
+        "entity": "other_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "agriculture",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "value": "agriculture",
+        "entity": "customService"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "broadcast",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "broadcast",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "airplane",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "airplane",
+        "entity": "embb_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "its",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "its",
+        "entity": "urllc_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "medical",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "medical",
+        "entity": "miot_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "hmtc",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "hmtc",
+        "entity": "type_service"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "massive",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "massive",
+        "entity": "miot_scenario"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "connectivity",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "connectivity",
+        "entity": "customService"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "education",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "education",
+        "entity": "customService"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
